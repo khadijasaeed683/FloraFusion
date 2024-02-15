@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('at.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+        }
+
+        header, footer {
+            background-color: #400434;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #022704;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0b320d;
+        }
+        footer a {
+            color: #59859a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #4c789d;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Flora Fusion</h1>
+</header>
+
+<main>
+    <h2>Contact Us</h2>
+
+    <p>For any inquiries, please use the contact form below or reach out to us via email or phone.</p>
+
+    <form action="process_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</main>
+
+<footer>
+    <p>Contact us via email: <a href="mailto:info@florafusion.com">info@florafusion.com</a></p>
+    <p>Call us: +1 (123) 456-7890</p>
+    <p>Follow us on <a href="https://www.instagram.com/florafusion/" target="_blank">Instagram</a></p>
+</footer>
+
+</body>
+</html>

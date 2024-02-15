@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Store</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h4 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .quantity button {
+            margin: 0 5px;
+        }
+        #cartModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            overflow-y: auto; /* Enable vertical scrolling */
+            
+        }
+
+        #cartItems {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        #checkoutBtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            display: block;
+            width: 100%;
+        }
+
+        #checkoutBtn:hover {
+            background-color: #45a049;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .cart-item img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Flora Fusion</h1>
+</header>
+
+<main>
+
+    <section>
+        <img src="plant1.jpeg" alt="Plant 1">
+        <h4>Indoor Plants</h4>
+        <p>2 Layer Lucky Bamboo</p>
+        <p>Price: Rs5,460</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity1','plant1.jpeg')">-</button>
+            <span id="quantity1">1</span>
+            <button onclick="incrementQuantity('quantity1','plant1.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('2Layer Lucky Bamboo', 5460, 'quantity1', 'plant1.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant2.jpeg" alt="Plant 2">
+        <h4>Cactus</h4>
+        <p>Aeonium decorum Succulent Plant</p>
+        <p>Price: Rs5000</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity2','plant2.jpeg')">-</button>
+            <span id="quantity2">1</span>
+            <button onclick="incrementQuantity('quantity2','plant2.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Cactus', 5000, 'quantity2', 'plant2.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant3.jpeg" alt="Plant 3">
+        <h4>HERBACEOUS</h4>
+        <p>Aloe Vera Plant</p>
+        <p>Price: Rs4000</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity3','plant2.jpeg')">-</button>
+            <span id="quantity3">1</span>
+            <button onclick="incrementQuantity('quantity3','plant2.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Aleo Vera', 5000, 'quantity3', 'plant3.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant4.jpeg" alt="Plant 4">
+        <h4>Fruit Plants</h4>
+        <p>Pineapple</p>
+        <p>Price: Rs6000</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity4','plant4.jpeg')">-</button>
+            <span id="quantity4">1</span>
+            <button onclick="incrementQuantity('quantity4','plant4.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Fruit Plant', 5000, 'quantity4', 'plant4.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant5.jpeg" alt="Plant 5">
+        <h4>Indoor Plants</h4>
+        <p>Rose(Peach)</p>
+        <p>Price: Rs2500</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity5','plant5.jpeg')">-</button>
+            <span id="quantity5">1</span>
+            <button onclick="incrementQuantity('quantity5','plant5.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Rose(peach)', 5000, 'quantity5', 'plant5.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant6.jpeg" alt="Plant 6">
+        <h4>Indoor Plants</h4>
+        <p>Money Golden</p>
+        <p>Price: Rs3200</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity6','plant6.jpeg')">-</button>
+            <span id="quantity6">1</span>
+            <button onclick="incrementQuantity('quantity6','plant6.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Money Golden', 5000, 'quantity6', 'plant6.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant7.jpeg" alt="Plant 7">
+        <h4>Grasses</h4>
+        <p>Pennisetum Species</p>
+        <p>Price: Rs2000</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity7','plant7.jpeg')">-</button>
+            <span id="quantity7">1</span>
+            <button onclick="incrementQuantity('quantity7','plant7.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Grasses', 5000, 'quantity7', 'plant7.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant8.jpeg" alt="Plant 8">
+        <h4>Fruit Plants</h4>
+        <p>Coffee Plant</p>
+        <p>Price: Rs7000</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity8','plant8.jpeg')">-</button>
+            <span id="quantity8">1</span>
+            <button onclick="incrementQuantity('quantity8','plant8.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Coffe Plant', 5000, 'quantity8', 'plant8.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant9.jpeg" alt="Plant 9">
+        <h4>OutDoor Plants</h4>
+        <p>Ficus Cage Shape Plant</p>
+        <p>Price: Rs50000</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity9','plant9.jpeg')">-</button>
+            <span id="quantity9">1</span>
+            <button onclick="incrementQuantity('quantity9','plant9.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Ficus Cage Shape', 5000, 'quantity9', 'plant9.jpeg')">Add to Cart</button>
+    </section>
+
+    <section>
+        <img src="plant10.jpeg" alt="Plant 10">
+        <h4>OutDoor Plants</h4>
+        <p>Crassula Campfire Plant</p>
+        <p>Price: Rs300</p>
+        <div class="quantity">
+            <button onclick="decrementQuantity('quantity10','plant10.jpeg')">-</button>
+            <span id="quantity10">1</span>
+            <button onclick="incrementQuantity('quantity10','plant10.jpeg')">+</button>
+        </div>
+        <button onclick="addToCart('Crassula Campfire Plant', 5000, 'quantity10', 'plant10.jpeg')">Add to Cart</button>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2023 Flower Shop</p>
+</footer>
+<div id="cartModal">
+    <button onclick="closeCartModal()">Close</button>
+    <h2>Shopping Cart</h2>
+    <div id="cartItems" class="scrollable-cart"></div>
+    <button id="checkoutBtn" onclick="checkout()">Checkout</button>
+</div>
+<script>
+let cart = [];
+
+function closeCartModal() {
+    document.getElementById('cartModal').style.display = 'none';
+}
+
+function addToCart(productName, price, quantityId, thumbnail) {
+    const quantity = parseInt(document.getElementById(quantityId).innerText);
+
+    // Check if the product is already in the cart
+    const existingItem = cart.find(item => item.productName === productName);
+
+    if (existingItem) {
+        // If the product is in the cart, update the quantity
+        existingItem.quantity = quantity;
+        existingItem.totalPrice = existingItem.price * existingItem.quantity;
+    } else {
+        // If the product is not in the cart, add a new item
+        const totalPrice = price * quantity;
+        cart.push({ productName, price, quantity, totalPrice, thumbnail });
+    }
+
+    alert(`Updated ${productName} quantity to ${quantity}`);
+    updateCartModal();
+    console.log(cart);
+}
+
+function incrementQuantity(quantityId) {
+    const quantityElement = document.getElementById(quantityId);
+    let quantity = parseInt(quantityElement.innerText);
+    quantity++;
+    quantityElement.innerText = quantity;
+    addToCart(quantityId, thumbnail); // Call addToCart to update the cart
+}
+
+function decrementQuantity(quantityId, thumbnail) {
+    const quantityElement = document.getElementById(quantityId);
+    let quantity = parseInt(quantityElement.innerText);
+    if (quantity > 1) {
+        quantity--;
+        quantityElement.innerText = quantity;
+        addToCart(quantityId, thumbnail); // Call addToCart to update the cart
+    }
+}
+
+function updateCartModal() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    cartItemsContainer.innerHTML = '';
+
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        itemElement.innerHTML = `
+            <img src="${item.thumbnail}" alt="${item.productName} Thumbnail">
+            <p>${item.productName} x ${item.quantity} - Rs${item.totalPrice.toFixed(2)}</p>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+    });
+
+    document.getElementById('cartModal').style.display = 'block';
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty. Add items before checkout.');
+        return;
+    }
+
+    let totalAmount = 0;
+    cart.forEach(item => {
+        totalAmount += item.totalPrice;
+    });
+
+    const confirmation = confirm(`Total Amount: Rs${totalAmount.toFixed(2)}\n\nProceed with the checkout?`);
+
+    if (confirmation) {
+        alert('Checkout successful!'); // In a real-world scenario, redirect to a payment gateway.
+        cart = []; // Clear the cart after successful checkout.
+        updateCartModal(); // Update the cart modal to reflect the changes.
+    }
+}
+</script>
+</body>
+</html>

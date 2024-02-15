@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+
+            font-family: 'TimesNewRoman',serif;
+            background: url('light.png') center no-repeat fixed;
+            background-size: cover;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+       
+        header {
+      background-color: rgba(253, 208, 208, 0.8);
+      color:#090808;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+    }
+
+.welcome-container {
+  animation: bounce 2s ease-in-out;
+}
+.welcome-container h1 {
+  animation: text-shadow-flicker 0.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-20px); }
+  60% { transform: translateY(10px); }
+  90% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes text-shadow-flicker {
+  0% { text-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
+  50% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+  100% { text-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
+}
+body {
+  animation: background-gradient 10s ease-in-out infinite;
+}
+
+@keyframes background-gradient {
+  0% { background-color: #f0f0f0; }
+  50% { background-color: #e0e0e0; }
+  100% { background-color: #f0f0f0; }
+}
+.welcome-container:hover {
+  animation: scale-up 0.5s ease-in-out;
+}
+
+@keyframes scale-up {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+    </style>
+</head>
+<body>
+  <header>
+    <h1>FLORA FUSION</h1>
+ </header>
+    <div class="welcome-container">
+       
+  <h1>Welcome to My Website</h1>
+  <p>Explore our collection of beautiful plants that will add life to your space.</p>
+  <p>From indoor to outdoor, we have a variety of plants to suit your preferences.</p>
+  <p>Start your journey to create a green and vibrant environment.</p>
+  <p>Feel free to explore!</p>
+  <a href="final.html" >Explore Now</a>
+</div>
+
+<style>
+.explore-button {
+  background-color: #19b026;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: button-pulse 1s ease-in-out infinite;
+}
+
+@keyframes button-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.explore-button:hover {
+  animation: button-glow 0.5s ease-in-out;
+}
+
+@keyframes button-glow {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.2); }
+}
+footer {
+      text-align: center;
+      padding: 1em;
+      background-color: rgba(253, 208, 208, 0.8);
+      color: #090808;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+</style>
+<footer>
+  <p>&copy; 2023 Flower Shop</p>
+</footer>
+</body>
+</html>
