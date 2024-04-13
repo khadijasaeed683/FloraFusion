@@ -24,6 +24,6 @@ If you'd like to contribute to the development of FloraFusion, we welcome your i
 
 
 ## Get in Touch
-We'd love to hear from you! Whether you have questions, feedback, or just want to say hello, don't hesitate to reach out. You can contact us via email at [your@email.com] or connect with us on social media.
+We'd love to hear from you! Whether you have questions, feedback, or just want to say hello, don't hesitate to reach out. You can contact us via email at [khadijasaeed@gmail.com] or connect with us on social media.
 
 Thank you for visiting FloraFusion! We hope you enjoy your floral journey.
